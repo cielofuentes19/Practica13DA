@@ -8,5 +8,5 @@ El presente repositorio contiene el código desarrollado para el Informe de la P
 Los integrantes son:
 - Fuentes Oviedo Cielo
 - Huaranga Valverde, Libni
-- Lebano Ramos, Gabriel
+- Levano Ramos, Gabriel
 - Quimper Villasante, Diego
