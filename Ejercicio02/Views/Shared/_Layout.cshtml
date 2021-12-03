@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <style>
+        .container-custom{
+            border: 4px;
+        }
+        .banner {
+            position: relative;
+            background: url(../../imagenes/bg.jpg);
+            min-height: 70vh;
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 120px;
+        }
+        .bg-custom {
+            background: #a4a4a4;
+        }
+        .bd-custom {
+            outline: 5px solid white;
+        }
+        .bd-custom2 {
+            outline: 5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar avbar-toggleable-md bg-white">
+        <div class="container-fluid row align-items-center justify-content-between d-flex">
+            <a class="navbar-brand" href="#">
+                <img src="https://th.bing.com/th/id/R.270dfcdeca3839e9cbf2b82ff494a60b?rik=Nuwr438lkPj%2faA&riu=http%3a%2f%2fcarrerasuniversitarias.pe%2flogos%2foriginal%2flogo-universidad-catolica-de-santa-maria.png&ehk=viZ9P1MXLfzdLmXUEWPhyHpTcuuQprdSIJzes8ad1Xw%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" width="65" height="65" />
+                <strong class="text-black"> | Lista de Las Facultades de La Universidad</strong>
+            </a>
+        </div>
+    </nav>
+    <section class="banner pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="bg-custom text-white rounded-top text-center bd-custom2">
+                    @RenderPage("_Header.cshtml")
+                </div>
+                <div class="col bg-white pt-2 rounded-bottom border-3 bd-custom">
+                    @RenderBody()
+                    <br />
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@using Ejercicio02_12.Models
+@model Tuple<List<Facultades>, Facultades>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "facultadesInfo"
+    };
+}
+<h3>Facultades: </h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @using (Ajax.BeginForm("OnSelectFacult", "Facultades", ajaxOptions, new { id = "facultadesform" }))
+            {
+                @Html.AntiForgeryToken();
+                var selected = false;
+                foreach (var facultad in Model.Item1)
+                {
+                    if (Model.Item2 == facultad)
+                    {
+                        selected = true;
+                    }
+                    else
+                    {
+                        selected = false;
+                    }
+                    @Html.RadioButton("facultNumber", facultad.ID, selected, new { onchange = "$('#facultadesform').trigger('submit')" });
+                    @Html.Label(facultad.Name);
+                    <br />
+                }
+            }
+        </div>
+    </div>
+</div>
+<hr />
+<div id="facultadesInfo">
+    @Html.Partial("~/Views/Shared/_FacultadesDetails.cshtml", Model.Item2)
+</div>

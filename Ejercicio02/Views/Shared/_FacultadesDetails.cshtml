@@ -1,0 +1,16 @@
+﻿@model Ejercicio02_12.Models.Facultades
+
+<h3>Programas Profesionales</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <strong>ID: </strong> @Html.DisplayFor(m => Model.ID)
+            <br />
+            <strong>Facultad: </strong> @Html.DisplayFor(m => Model.Name)
+            <br />
+            <strong>Programas Profesionales: </strong> @Html.DisplayFor(m => Model.FacultadesDe)
+            <br />
+            <small>Consultado a las: @DateTime.Now</small>
+        </div>
+    </div>
+</div>
